@@ -1,0 +1,30 @@
+{
+  "name": "favnpm-backend",
+  "version": "1.0.0",
+  "description": "this is a fav npm package project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AMIRSOHAIL1998/favNPM-Backend.git"
+  },
+  "keywords": [
+    "npm",
+    "package"
+  ],
+  "author": "Amir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AMIRSOHAIL1998/favNPM-Backend/issues"
+  },
+  "homepage": "https://github.com/AMIRSOHAIL1998/favNPM-Backend#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "pg": "^8.9.0",
+    "sequelize": "^6.29.0"
+  }
+}
