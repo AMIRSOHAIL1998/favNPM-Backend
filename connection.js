@@ -1,4 +1,4 @@
-const Sequelize = require("sequelize");
+const { Sequelize, DataTypes, Model } = require("sequelize");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -20,3 +20,32 @@ sequelize
   .catch((error) => {
     console.error("Unable to connect to the database: ", error);
   });
+
+export const User = sequelize.define(
+  "favpack",
+  {
+    // Model attributes are defined here
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    comment: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+  },
+  {
+    packName: DataTypes.STRING,
+    allowNull: false,
+  }
+);
+
+// `sequelize.define` also returns the model
+console.log(User === sequelize.models.User); // true
