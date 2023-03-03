@@ -21,11 +21,20 @@ sequelize
     console.error("Unable to connect to the database: ", error);
   });
 
-export const User = sequelize.define(
-  "favpack",
+ const FavPackage = sequelize.define(
+  "FavPackage",
   {
     // Model attributes are defined here
-    name: {
+    id:{
+      type: DataTypes.UUID,
+      allowNull:false,
+      primaryKey: true
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    pack_name:{
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -33,19 +42,29 @@ export const User = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-  },
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-    },
-  },
-  {
-    packName: DataTypes.STRING,
-    allowNull: false,
   }
+  
 );
+const User = sequelize.define(
+  "User",
+  {
+    // Model attributes are defined here
+    id:{
+      type: DataTypes.INTEGER,
+      allowNull:false,
+      primaryKey: true
+    },
+    name:{
+      type: DataTypes.STRING,
+      allowNull:false
+    }
+  }
+  
+);
+User.sync({ alter: true });
+FavPackage.sync({ alter: true });
 
-// `sequelize.define` also returns the model
-console.log(User === sequelize.models.User); // true
+module.exports = {
+  User,
+  FavPackage
+}

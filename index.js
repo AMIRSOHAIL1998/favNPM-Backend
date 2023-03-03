@@ -1,4 +1,5 @@
 const express = require("express");
+require("./connection.js")
 
 const app = express();
 

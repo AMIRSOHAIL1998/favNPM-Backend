@@ -1,28 +1,34 @@
 const express = require("express");
-const { User } = require("../connection.js");
+const { User , FavPackage} = require("../connection.js");
 
 const router = express.Router();
 
 //Routes for CRUD operations
 
 router.get("/api", (res, res) => {
-  const { name, comment, packName } = res.body;
+  const { id , user_id, pack_name, comment } = res.body;
   const user = new User({
-    name,
-    comment,
     id,
-    packName,
+    user_id,
+    pack_name,
+    comment
   });
 });
-router.post("/api/npm/add", (res, res) => {
-  const { name, comment, packName } = res.body;
-  const user = new User({
-    name,
-    comment,
-    packName,
-  });
 
-  user.save();
+
+router.post("/api/npm/add", (res, res) => {
+  try {
+    const { id , user_id, pack_name, comment } = res.body;
+    const favPack =FavPackage.create({
+      id,
+      user_id,
+      pack_name,
+      comment
+    });
+  } catch (error) {
+    
+  }
+
 });
 router.put("/api/npm/update", (res, res) => {});
 router.delete("/api/npm/delete", (res, res) => {});

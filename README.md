@@ -7,6 +7,12 @@
 - ExpressJs
 - pg NPM Package to connect with DB
 
+
+### Requirement of the project
+- create Rest API to store Fav NPM Package name and Description, Why this package is fav.
+- Create REST API for performing CRUD Operations Like Add, Update, Delete.
+- Use Sequelize ORM and Validator for Data Validation before sending to sequelize.
+
 # API Documentation
 
 For this project you need 3 routes one for updating Fav NPM Packages and for Adding New Package and one for deleting the packages from Fav List.
@@ -15,6 +21,8 @@ For this project you need 3 routes one for updating Fav NPM Packages and for Add
 
 - User Table which stores details of the user with the fields user_id and name of the user.
 - Fav Package Table to store fav packages of individual users with fields user_id as Foreings field and Package Name and Comment field.
+
+[Below is the Reference of the table and how data will store in it.]
 
 # User Table
 
