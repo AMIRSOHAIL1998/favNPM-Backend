@@ -24,6 +24,6 @@ For this project you need 3 routes one for updating Fav NPM Packages and for Add
 
 # Fav Package Table
 
-| UUID | fav_package |             comment             |
-| :--: | :---------: | :-----------------------------: |
-|  01  |   ReactJS   | Favorite Becouse NPM Flexiblity |
+|package Id | UUID | fav_package |             comment             |
+|:---------:| :--: | :---------: | :-----------------------------: |
+| 101       |  01  |   ReactJS   | Favorite Becouse NPM Flexiblity |
