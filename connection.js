@@ -1,4 +1,4 @@
-const { Sequelize, DataTypes, Model } = require("sequelize");
+const { Sequelize, DataTypes, Model, UUIDV4 } = require("sequelize");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -27,17 +27,18 @@ sequelize
     // Model attributes are defined here
     id:{
       type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       allowNull:false,
-      primaryKey: true,
-      defaultValue: DataTypes.UUIDV4
+      primaryKey: true
     },
     user_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     pack_name:{
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true
     },
     comment: {
       type: DataTypes.STRING,
@@ -51,12 +52,23 @@ const User = sequelize.define(
   {
     // Model attributes are defined here
     id:{
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       allowNull:false,
       primaryKey: true
     },
     name:{
       type: DataTypes.STRING,
+      allowNull:false
+    },
+    email:{
+      type: DataTypes.STRING,
+      unique:true,
+      allowNull:false
+    },
+    contact:{
+      type: DataTypes.STRING,
+      unique:true,
       allowNull:false
     }
   }

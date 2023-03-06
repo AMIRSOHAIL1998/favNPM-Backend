@@ -1,11 +1,13 @@
 const express = require("express");
 require("./connection.js")
-const AddRouter = require('./routes/routes')
+const favPackageRoute = require('./routes/favPackageRoutes')
+const userRoutes = require('./routes/userRoutes')
 
 const app = express();
 
 app.use(express.json());
-app.use("/api",AddRouter);
+app.use("/api",favPackageRoute);
+app.use('/api',userRoutes);
 
 app.listen(5000, () => {
   console.log("server is running on port 5000");
