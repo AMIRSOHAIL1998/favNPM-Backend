@@ -1,15 +1,10 @@
-const express = require('express');
 const {User} = require('../connection')
 
-const router = express.Router();
-
-
-router.get('/users',(req,res) => {
+exports.getUsers = (req,res) => {
     res.status(200).json({message:"All Users details fetched successfully"})
-})
+}
 
-
-router.post('/users/adduser',async(req,res)=>{
+exports.addUser = async(req,res)=>{
     try {
         const {name, email, contact} = req.body;
         const user = await User.create({
@@ -26,9 +21,9 @@ router.post('/users/adduser',async(req,res)=>{
             error
         })
     }
-})
+}
 
-router.delete('/users/deleteuser' ,async(req,res)=>{
+exports.deleteUser = async(req,res)=>{
     try {
         console.log(uid);
         await User.destroy({
@@ -44,9 +39,9 @@ router.delete('/users/deleteuser' ,async(req,res)=>{
             error
         })
     }
-})
+}
 
-router.put('/users/updateuser', async(req,res)=>{
+exports.updateUser = async(req,res)=>{
     try {
         const uid = req.body.id
         const user = await User.findOne({
@@ -98,6 +93,4 @@ router.put('/users/updateuser', async(req,res)=>{
             error
         })
     }
-})
-
-module.exports = router;
+}

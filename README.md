@@ -15,7 +15,23 @@
 
 # API Documentation
 
-For this project you need 3 routes one for updating Fav NPM Packages and for Adding New Package and one for deleting the packages from Fav List.
+below are the routes which canbe used from the UI to perform CRUD operations.
+#### User Routes
+
+/api/users   to get all user in database
+/api/users/add   to add new user in database.
+/api/users/delete to delete user data from database
+/api/users/update to update user details in record
+
+
+#### Fav NPM ackages Routes
+
+/api/packages         to get all packages in the Database
+/api/packages/add     to add new package in the record
+/api/packages/update  to update package details in the database 
+/api/packages/delete  to delete records from teh database
+
+
 
 ### Table required for storing Fav NPM Packages and user Details
 
