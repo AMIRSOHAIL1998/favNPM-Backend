@@ -12,7 +12,7 @@ dotenv.config();
 //   }
 // );
 
-const sequelize = new Sequelize('postgres://amir:L2y9fGOUVYwpzRr711yapV1LOZV0ad6C@dpg-cg3e6vl269v3bp9osgpg-a.oregon-postgres.render.com/npmpackage?ssl=true')
+const sequelize = new Sequelize(process.env.DBSTRING)
 
 sequelize
   .authenticate()
