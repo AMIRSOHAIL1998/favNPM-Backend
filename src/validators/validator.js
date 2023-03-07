@@ -21,20 +21,11 @@ var userConstraints = {
   };
 
 exports.validateUser = async(req,res,next) => {
-   try {
       const validation = await  validate(req.body,userConstraints);
-      if(validation != "undefined"){
+      if(validation){
         return res.status(502).json(validation);
       }
       next();
-   } catch (error) {
-        res.status(400).json({
-            message:"Something wrong from validation",
-            error
-        })
-   }
-    
-
 }
 
 // var constraints = {
