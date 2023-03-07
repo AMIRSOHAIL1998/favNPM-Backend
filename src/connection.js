@@ -2,15 +2,17 @@ const { Sequelize, DataTypes, Model, UUIDV4 } = require("sequelize");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const sequelize = new Sequelize(
-  process.env.PGDB,
-  process.env.PGUSER,
-  process.env.PGPASSWORD,
-  {
-    host: process.env.PGHOST,
-    dialect: process.env.PGDIALECT,
-  }
-);
+// const sequelize = new Sequelize(
+//   process.env.PGDB,
+//   process.env.PGUSER,
+//   process.env.PGPASSWORD,
+//   {
+//     host: process.env.PGHOST,
+//     dialect: process.env.PGDIALECT,
+//   }
+// );
+
+const sequelize = new Sequelize('postgres://amir:L2y9fGOUVYwpzRr711yapV1LOZV0ad6C@dpg-cg3e6vl269v3bp9osgpg-a.oregon-postgres.render.com/npmpackage?ssl=true')
 
 sequelize
   .authenticate()
