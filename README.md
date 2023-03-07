@@ -63,4 +63,4 @@ https://fav-npm-package.onrender.com/api/packages/delete  to delete records from
 - start terminal and type npm install to start the server.
 - connect with frontend or test all the routes using postman.
 
-###### You can have to change the connection string to connect with your DB.
+###### You have to change the connection string to connect with your DB.
